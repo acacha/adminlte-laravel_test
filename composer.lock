@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "589755bacc0140317b455d33d1e4eb10",
-    "content-hash": "adc8e08a0c47d9c8f32adceef0db28e5",
+    "hash": "ed9e6daa1ac2dd29f037eccd97bd5780",
+    "content-hash": "3b0eda2fed18da3ab710b889c1d4c177",
     "packages": [
         {
             "name": "acacha/admin-lte-template-laravel",
@@ -13,10 +13,11 @@
             "dist": {
                 "type": "path",
                 "url": "../adminlte-laravel",
-                "reference": "11ad209ac2f1c54f973dd22246c371e4a4ec1588",
+                "reference": "a9c437748af5d21766c5b965756d5671b325c04e",
                 "shasum": null
             },
             "require": {
+                "acacha/helpers": "dev-master",
                 "acacha/user": "~0.2",
                 "creativeorange/gravatar": "~1.0",
                 "illuminate/console": "~5.0",
@@ -58,6 +59,68 @@
                 "laravel",
                 "template",
                 "theme"
+            ]
+        },
+        {
+            "name": "acacha/helpers",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../../../acacha/helpers",
+                "reference": "2628bc8ede26fc3fd52bdd5c333cf2bb911a5945",
+                "shasum": null
+            },
+            "require": {
+                "php": "~5.6|~7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0||~5.0",
+                "squizlabs/php_codesniffer": "^2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Acacha\\Helpers\\": "tests"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "phpunit"
+                ],
+                "check-style": [
+                    "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+                ],
+                "fix-style": [
+                    "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sergi Tur Badenas",
+                    "email": "sergiturbadenas@gmail.com",
+                    "homepage": "https://github.com/acacha",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Extra helpers for Laravel",
+            "homepage": "https://github.com/acacha/helpers",
+            "keywords": [
+                "acacha",
+                "helpers",
+                "laravel"
             ]
         },
         {
@@ -570,20 +633,20 @@
         },
         {
             "name": "jeremeamia/SuperClosure",
-            "version": "2.2.0",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeremeamia/super_closure.git",
-                "reference": "29a88be2a4846d27c1613aed0c9071dfad7b5938"
+                "reference": "443c3df3207f176a1b41576ee2a66968a507b3db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeremeamia/super_closure/zipball/29a88be2a4846d27c1613aed0c9071dfad7b5938",
-                "reference": "29a88be2a4846d27c1613aed0c9071dfad7b5938",
+                "url": "https://api.github.com/repos/jeremeamia/super_closure/zipball/443c3df3207f176a1b41576ee2a66968a507b3db",
+                "reference": "443c3df3207f176a1b41576ee2a66968a507b3db",
                 "shasum": ""
             },
             "require": {
-                "nikic/php-parser": "^1.2|^2.0",
+                "nikic/php-parser": "^1.2|^2.0|^3.0",
                 "php": ">=5.4",
                 "symfony/polyfill-php56": "^1.0"
             },
@@ -593,7 +656,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.2-dev"
+                    "dev-master": "2.3-dev"
                 }
             },
             "autoload": {
@@ -624,7 +687,7 @@
                 "serialize",
                 "tokenizer"
             ],
-            "time": "2015-12-05 17:17:57"
+            "time": "2016-12-07 09:37:55"
         },
         {
             "name": "laravel/framework",
@@ -3887,7 +3950,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "acacha/admin-lte-template-laravel": 20
+        "acacha/admin-lte-template-laravel": 20,
+        "acacha/helpers": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
