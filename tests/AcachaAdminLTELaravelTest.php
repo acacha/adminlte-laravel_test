@@ -281,5 +281,30 @@ class AcachaAdminLTELaravelTest extends TestCase
             'name' => $view,
         ]);
     }
+
+    /**
+     * Test adminlte:admin command
+     *
+     */
+    public function testAdminlteAdminCommand()
+    {
+        $seed = database_path('seeds/AdminUserSeeder.php');
+        try {
+            unlink($seed);
+        } catch(\Exception $e) {
+
+        }
+        $this->callAdminlteAdminCommand();
+        $this->assertFileExists($seed);
+    }
+
+
+    /**
+     * Call adminlte:admin command.
+     */
+    protected function callAdminlteAdminCommand()
+    {
+        Artisan::call('adminlte:admin');
+    }
 }
 
